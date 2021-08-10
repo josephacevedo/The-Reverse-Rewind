@@ -22,8 +22,9 @@
 <body>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"> <img src="" class="d-line-block align-text-top" width="30" height="24">
-                App Name</a>
+            <a class="navbar-brand" href="#"> <img src="img/logo-white-small.svg" class="d-line-block align-text-top"
+                    width="30" height="24">
+                The Reverse Rewind</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -40,7 +41,8 @@
                         <a class="nav-link active" aria-current="page" href="code.html">The Code</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://github.com/josephacevedo" target="_blank">Git Repo</a>
+                        <a class="nav-link" href="https://github.com/josephacevedo/The-Reverse-Rewind"
+                            target="_blank">Git Repo</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="https://josephacevedo.netlify.app" target="_blank">About</a>
@@ -55,26 +57,58 @@
     <main class="flex-shrink-0">
 
         <div class="container py-5 px-5">
-            <h2 class="border-1 border-bottom border-dark mt-5">Title</h2>
+            <h2 class="border-1 border-bottom border-dark mt-5">The Reverse Rewind</h2>
             <div class="row row-cols-1 row-cols-lg-2 mt-5">
                 <!-- code -->
                 <div class="col-lg-8">
                     <pre class="line-numbers">
                         <code class="language-javascript">
-                 //call hello world
-                  function HelloWorld(){
-                     alert("Hello World");
-                     }
-                 HelloWorld();
+                            // get the string from the page
+                            // controller
+                            function getValue(){
+                            
+                                document.getElementById("alert").classList.add("invisible");
+                                let userString = document.getElementById("userString").value;
+                                let revString = reverseString(userString);
+                                displayString(revString);
+                            
+                            }
+                            
+                            // reverse the string
+                            // logic
+                            function reverseString(userString){
+                                let revString = [];
+                            
+                                // reverse string using for loop
+                                for (let i = userString.length - 1; i >= 0; i--) {
+                                    revString += userString[i];
+                                    
+                                }
+                                return revString
+                            }
+                            
+                            // display the reversed string
+                            // View
+                            function displayString(revString){
+                            // write message to page
+                            document.getElementById("message").innerHTML = `Your string reversed is: ${revString}`
+                            // show alert box
+                            document.getElementById("alert").classList.remove("invisible");
+                            }
                  
                     </code>
                 </pre>
                 </div>
                 <!-- description -->
                 <div class="col-lg-4">
-                    <p>The code is structured in one function</p>
-                    <h5>Hello World</h5>
-                    <p>Hello world is a function that displays an alert with a message of hello world</p>
+                    <h5>getValues()</h5>
+                    <p>The getValues function collects the user string data, inserts it into the function that reverses the string and then takes that and inputs it into the display function which is our view and controls how the data is displayed.</p>
+
+                    <h5>reverseString()</h5>
+                    <p>The reverseString function takes a parameter of userString. It takes the string finds the last letter (userString.length - 1), and loops though the string array until it finds the first letter which has an index of 0. Lastly it assigns that reversed string to the revString array and returns it.</p>
+
+                    <h5>displayString()</h5>
+                    <p>The displayString function takes a parameter of revString and displays the output of the reversed string.</p>
                 </div>
             </div>
             </di>
@@ -90,9 +124,9 @@
                 </div>
                 <!-- logo -->
                 <div class="col d-flex justify-content-end align-items-center order-first justify-content-md-center">
-                    
-                            <img src="img/logo-white-2.svg" alt="joseph acevedo logo" class="footer-logo">
-                   
+
+                    <img src="img/logo-white-2.svg" alt="joseph acevedo logo" class="footer-logo">
+
                 </div>
 
                 <!-- social media links -->

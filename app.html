@@ -21,7 +21,7 @@
 <body>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"> <img src="" class="d-line-block align-text-top" width="30" height="24">
+            <a class="navbar-brand" href="#"> <img src="img/logo-white-small.svg" class="d-line-block align-text-top" width="30" height="24">
                 App Name</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,7 +39,7 @@
                         <a class="nav-link" href="code.html">The Code</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://github.com/josephacevedo" target="_blank">Git Repo</a>
+                        <a class="nav-link" href="https://github.com/josephacevedo/The-Reverse-Rewind" target="_blank">Git Repo</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="https://josephacevedo.netlify.app" target="_blank">About</a>
@@ -52,7 +52,30 @@
 
      <!-- main section -->
      <main class="flex-shrink-0">
-         <div class="container"></div>
+         <div class="container">
+             <div class="row mt-5 row-cols-1 row-cols-md-2">
+                 <div class="col">
+                     <h1 class="h1 fw-bold">The Reverse Rewind</h1>
+                     <p>A Javascript application that takes a word and reverses it</p>
+                 </div>
+                 <div class="col">
+                     <p>Enter a String to Reverse</p>
+                     <hr>
+                     <form>
+                         <div class="form-group">
+                             <input class="form-control" id="userString" type="text" placeholder="Word">
+                            </div>
+                            <button id="submit" class="btn btn-danger mt-2" type="button">Reverse</button>
+                     </form>
+
+                     <div class="alert alert-dark mt-5 invisible" id="alert" role="alert">
+                        <h4 class="alert-heading text-success">Reverse Successful</h4>
+                        <p class="" id="message"></p>
+                      </div>
+                 </div>
+        
+             </div>
+         </div>
      </main>
 
 
@@ -101,6 +124,10 @@ integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0Ec
 </script>
 
 <script src="js/site.js"></script>
+<script>
+    document.getElementById("submit").addEventListener("click",getValue);
+    
+</script>
 </body>
 
 </html>
